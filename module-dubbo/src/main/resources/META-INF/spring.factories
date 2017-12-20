@@ -1,0 +1,6 @@
+org.springframework.context.ApplicationContextInitializer=\
+com.boot.dubbo.DubboConfigurationApplicationContextInitializer
+org.springframework.context.ApplicationListener=\
+com.boot.dubbo.DubboHolderListener
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.boot.dubbo.DubboAutoConfiguration
