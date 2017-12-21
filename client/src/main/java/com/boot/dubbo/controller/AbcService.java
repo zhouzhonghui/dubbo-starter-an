@@ -1,7 +1,7 @@
 package com.boot.dubbo.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.boot.dubbo.EchoService;
+import com.boot.dubbo.service.EchoService;
 import org.springframework.stereotype.Component;
 
 /**

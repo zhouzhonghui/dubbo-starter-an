@@ -1,7 +1,6 @@
-package com.boot.dubbo;
+package com.boot.dubbo.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.boot.dubbo.EchoService;
 
 /**
  * @author xiaofei.wxf(teaey)

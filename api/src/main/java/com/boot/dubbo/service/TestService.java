@@ -1,4 +1,4 @@
-package com.boot.dubbo;
+package com.boot.dubbo.service;
 
 /**
  * @author xiaofei.wxf(teaey)
