@@ -1,9 +1,9 @@
 package com.boot.dubbo.domain;
 
 public class LoginResponse {
-    private String name ;
+    private String name;
 
-    private String email ;
+    private String email;
 
 
     public String getName() {

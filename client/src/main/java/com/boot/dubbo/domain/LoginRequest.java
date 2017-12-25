@@ -7,9 +7,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class LoginRequest {
     @NotEmpty
-    private String name ;
+    private String name;
     @Email
-    private String email ;
+    private String email;
 
 
     public String getName() {
