@@ -20,7 +20,7 @@ public class LoginController {
     @Reference(version = "1.0.0")
     public EchoService echoService;
 
-    @PostMapping(path = "/login")
+    @PostMapping(path = "/login/1.0.0")
     public LoginResponse login(@RequestBody @Valid LoginRequest request) {
 
         LoginResponse response = new LoginResponse();

@@ -1,6 +1,7 @@
 package com.boot.dubbo.domain;
 
-public class LoginResponse {
+public class LoginResponse extends BaseResponse{
+    private static final long serialVersionUID = 4948173449648182350L;
     private String name;
 
     private String email;

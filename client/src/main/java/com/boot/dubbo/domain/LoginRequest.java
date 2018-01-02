@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 
 public class LoginRequest extends BaseRequest{
+    private static final long serialVersionUID = 5366557840304411218L;
     @NotEmpty
     private String name;
     @Email

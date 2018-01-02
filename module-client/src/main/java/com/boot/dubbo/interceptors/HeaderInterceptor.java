@@ -1,26 +1,30 @@
 package com.boot.dubbo.interceptors;
 
+
 import com.boot.dubbo.domain.BaseRequest;
-import org.springframework.core.MethodParameter;
-import org.springframework.web.method.HandlerMethod;
+import com.boot.dubbo.util.ThreadLocalUtil;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.lang.reflect.Method;
-import java.lang.reflect.Parameter;
-import java.util.Map;
 
 public class HeaderInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
-        String accept = httpServletRequest.getHeader("Accept");
-        Map map = httpServletRequest.getParameterMap() ;
-        HandlerMethod handlerMethod = (HandlerMethod) o;
-        MethodParameter methodParameter = handlerMethod.getMethodParameters()[0] ;
-        Method m = handlerMethod.getMethod() ;
-        Parameter parameter = m.getParameters()[0] ;
+
+        String clientId = httpServletRequest.getHeader("clientId") ;
+        String clientChnl = httpServletRequest.getHeader("clientChnl") ;
+        String requestURI = httpServletRequest.getRequestURI() ;
+        String[] stringArr = requestURI.split("/") ;
+
+        BaseRequest request = new BaseRequest() ;
+        request.setClientId(clientId);
+        request.setClientChnl(clientChnl) ;
+        request.setResource(stringArr[0]);
+        request.setServerName(stringArr[1]);
+        request.setVersion(stringArr[2]);
+        ThreadLocalUtil.set(request);
         return true;
     }
 
@@ -31,6 +35,6 @@ public class HeaderInterceptor implements HandlerInterceptor {
 
     @Override
     public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
-
+        ThreadLocalUtil.reset();
     }
 }
