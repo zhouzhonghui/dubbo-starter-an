@@ -1,6 +1,5 @@
 package com.boot.dubbo.exceptions.response;
 
-import com.boot.dubbo.enums.ExceptionType;
 import com.boot.dubbo.exceptions.errors.MainError;
 import com.boot.dubbo.exceptions.errors.SubError;
 import com.boot.dubbo.exceptions.errors.SubErrorType;
@@ -8,13 +7,10 @@ import com.boot.dubbo.exceptions.errors.SubErrors;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
