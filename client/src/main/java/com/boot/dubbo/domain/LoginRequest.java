@@ -7,9 +7,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class LoginRequest extends BaseRequest{
     private static final long serialVersionUID = 5366557840304411218L;
-    @NotEmpty
+    @NotEmpty(message = "isv.LoginRequest.name.is.null")
     private String name;
-    @Email
+    @Email(message = "isv.LoginRequest.email.is.null")
     private String email;
 
 

@@ -21,9 +21,9 @@ public class HeaderInterceptor implements HandlerInterceptor {
         BaseRequest request = new BaseRequest() ;
         request.setClientId(clientId);
         request.setClientChnl(clientChnl) ;
-        request.setResource(stringArr[0]);
-        request.setServerName(stringArr[1]);
-        request.setVersion(stringArr[2]);
+        request.setResource(stringArr[1]);
+        request.setServerName(stringArr[2]);
+        request.setVersion(stringArr[3]);
         ThreadLocalUtil.set(request);
         return true;
     }

@@ -2,10 +2,12 @@ package com.boot.dubbo.interceptors;
 
 
 import com.boot.dubbo.domain.BaseRequest;
+import com.boot.dubbo.util.ThreadLocalUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
 @Aspect
@@ -31,7 +33,8 @@ public class ControllerInterceptor {
         for (Object o : objects){
             if(o instanceof BaseRequest){
                 BaseRequest request = (BaseRequest) o;
-                request.setVersion("212");
+                BaseRequest header = ThreadLocalUtil.get() ;
+                BeanUtils.copyProperties(header, request);
             }
         }
 
