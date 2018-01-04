@@ -9,6 +9,8 @@ public class LoginRequest extends BaseRequest{
     private static final long serialVersionUID = 5366557840304411218L;
     @NotEmpty(message = "isv.LoginRequest.name.is.null")
     private String name;
+    @NotEmpty(message = "isv.LoginRequest.passwd.is.null")
+    private String passwd;
     @Email(message = "isv.LoginRequest.email.is.null")
     private String email;
 
@@ -27,5 +29,13 @@ public class LoginRequest extends BaseRequest{
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPasswd() {
+        return passwd;
+    }
+
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
     }
 }
