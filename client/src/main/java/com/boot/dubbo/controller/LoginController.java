@@ -71,4 +71,23 @@ public class LoginController {
 
         return response;
     }
+
+    /**
+     * 测试权限
+     * @param request
+     * @return
+     */
+    @PostMapping(path = "/testPermisson2/1.0.0")
+    @RequiresPermissions("oauth2:test:read1")
+    public LoginResponse testPermisson2(@RequestBody @Valid LoginRequest request) {
+
+        LoginResponse response = new LoginResponse();
+
+        BeanUtils.copyProperties(request, response);
+
+        echoService.test(request.getName());
+
+
+        return response;
+    }
 }
